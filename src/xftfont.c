@@ -171,9 +171,9 @@ XftFontOpenXlfd (Display *dpy, int screen, const char *xlfd)
     {
 	printf ("XftFontOpenXlfd \"%s\": ", xlfd);
 	if (pat)
-	    printf ("Invalid xlfd\n");
-	else
 	    FcPatternPrint (pat);
+	else
+	    printf ("Invalid xlfd\n");
     }
 
     if (!pat)

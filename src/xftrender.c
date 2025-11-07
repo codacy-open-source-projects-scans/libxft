@@ -140,7 +140,7 @@ XftGlyphRender (Display		*dpy,
 	size = sizeof (unsigned int);
     }
     chars = char_local;
-    if ((size_t)nglyphs > SIZE_MAX / size)
+    if (((size_t)nglyphs > SIZE_MAX / size) || (nglyphs < 0))
 	goto bail1;
     needed = (size_t)nglyphs * size;
     if (needed > sizeof (char_local))
